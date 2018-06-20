@@ -4,6 +4,7 @@
  * Module dependencies
  */
 let express = require('express')
+let cors = require('cors')
 let app = express()
 let bodyParser = require('body-parser')
 let router = require('./src/main.routes')
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 app.use(bodyParser.json())
+app.use(cors())
 
 let port = process.env.port || 8080
 
