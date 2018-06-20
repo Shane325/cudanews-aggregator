@@ -1,0 +1,30 @@
+{
+  "name": "cudanews-aggregator",
+  "version": "1.0.0",
+  "description": "Article aggregator for cudanews application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shane325/cudanews-aggregator.git"
+  },
+  "keywords": [
+    "barracuda",
+    "email",
+    "security",
+    "spear",
+    "phishing"
+  ],
+  "author": "Shane Barry and Quang Ngo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shane325/cudanews-aggregator/issues"
+  },
+  "homepage": "https://github.com/Shane325/cudanews-aggregator#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "4.16.3"
+  }
+}
