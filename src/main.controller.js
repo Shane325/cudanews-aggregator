@@ -3,6 +3,8 @@
 /**
  * Module dependencies
  */
+let _ = require('lodash')
+let firebaseApiService = require('./firebase-api.service')
 const NewsAPI = require('newsapi')
 let newsConfig = require('./config/news')
 const news = new NewsAPI(newsConfig.NEWS_API_KEY)
@@ -18,6 +20,9 @@ module.exports.getArticles = (req, res) => {
     language: newsConfig.language,
     page: 1
   }).then(response => {
-    res.json(response)
+    let articles = response.articles
+    _.forEach(articles, (article) => {
+      firebaseApiService.saveArticle(article)
+    })
   })
 }
