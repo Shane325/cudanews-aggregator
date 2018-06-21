@@ -4,20 +4,11 @@
  * Module dependencies
  */
 let express = require('express')
-let cors = require('cors')
 let app = express()
-let bodyParser = require('body-parser')
-let router = require('./src/main.routes')
-
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
-app.use(bodyParser.json())
-app.use(cors())
-
 let port = process.env.port || 8080
+let controller = require('./src/main.controller')
 
-app.use('/api', router)
+setInterval(controller.getArticles, 1000 * 300) // 5 minute interval
 
 app.listen(port)
 console.log('App listening on port ', port)
