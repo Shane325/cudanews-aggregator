@@ -27,8 +27,8 @@ module.exports.getArticles = (req, res) => {
       from: from,
       to: currentDate,
       language: newsConfig.language,
-      sources: newsConfig.sources,
-      pageSize: 100
+      pageSize: 100,
+      sortBy: 'relevancy'
     }).then(response => {
     // Save each article in firebase
       _.forEach(response.articles, (article) => {
